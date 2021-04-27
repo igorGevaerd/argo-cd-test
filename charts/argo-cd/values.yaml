@@ -1,4 +1,4 @@
-rgo-cd:
+argo-cd:
   installCRDs: false
   global:
     image:
@@ -8,6 +8,10 @@ rgo-cd:
   server:
     extraArgs:
       - --insecure
+    configs:
+      secret:
+        argocdServerAdminPassword: "$2a$10$UcJmeUy7w5EaEgBiLuHHye2eeZlJuRZGEFWgLaTj5trv98hRjUmV6"
+        argocdServerAdminPasswordMtime: "2021-04-27T07:33:39Z"
     config:
       repositories: |
         - type: helm
