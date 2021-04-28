@@ -2,16 +2,12 @@ argo-cd:
   installCRDs: false
   global:
     image:
-      tag: v2.0.1
+      tag: v2.0.0
   dex:
     enabled: false
   server:
     extraArgs:
       - --insecure
-    configs:
-      secret:
-        argocdServerAdminPassword: "$2a$10$UcJmeUy7w5EaEgBiLuHHye2eeZlJuRZGEFWgLaTj5trv98hRjUmV6"
-        argocdServerAdminPasswordMtime: "2021-04-27T07:33:39Z"
     config:
       repositories: |
         - type: helm
@@ -20,3 +16,10 @@ argo-cd:
         - type: helm
           name: argo-cd
           url: https://argoproj.github.io/argo-helm
+configs:
+  secret:
+    # Argo expects the password in the secret to be bcrypt hashed. You can create this hash with
+    # `htpasswd -nbBC 10 "" $ARGO_PWD | tr -d ':\n' | sed 's/$2y/$2a/'`
+    argocdServerAdminPassword: $2a$10$5E3XKKrCb0mPleodqQfiueQ0UvgYC9MM42wZgQNvIHkweB0CCSTIC
+    # Password modification time defaults to current time if not set
+    argocdServerAdminPasswordMtime: 2021-04-28T20:23:05Z
