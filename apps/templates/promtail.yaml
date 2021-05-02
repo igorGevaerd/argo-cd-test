@@ -12,7 +12,6 @@ spec:
   project: default
   source:
     chart: promtail
-    helm:
     repoURL: https://grafana.github.io/helm-charts
     targetRevision: 3.5.0
   syncPolicy:
