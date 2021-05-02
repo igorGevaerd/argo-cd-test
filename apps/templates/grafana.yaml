@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: grafana
+  namespace: tools
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: monitoring
+  project: default
+  source:
+    chart: grafana
+    helm:
+      values: |
+        admin:
+          userKey: "ademir"
+        passwordKey: "wasfademir"
+          enabled: true
+    repoURL: https://grafana.github.io/helm-charts
+    targetRevision: 6.8.2
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
