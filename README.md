@@ -5,7 +5,7 @@ This is an exemple of the usage of argo cluster bootstrap to bring up several re
 
 From the cluster perspective:
 ```
-kgp -A      
+$ kgp -A      
 NAMESPACE     NAME                                                     READY   STATUS    RESTARTS   AGE
 default       demo-mysql-8c4bc5464-bcwxk                               1/1     Running   0          2m53s
 default       demo-wordpress-65cc4b8947-ccb64                          1/1     Running   0          2m53s
