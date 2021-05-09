@@ -8,7 +8,7 @@ argo-cd:
   server:
     extraArgs:
       - --insecure
-      - --basehref
+      - --rootpath
       - /argocd
     config:
       repositories: |
