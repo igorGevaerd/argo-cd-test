@@ -23,7 +23,7 @@ argo-cd:
       hosts:
         - localhost
       paths:
-        - /argocd/(.*)
+        - /argocd
       https: true
 configs:
   secret:
