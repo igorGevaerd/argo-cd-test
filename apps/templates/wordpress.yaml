@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: wordpress
+  namespace: tools
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/igorGevaerd/argo-cd-test.git
+    targetRevision: HEAD
+    path: apps/templates/wordpress/s
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
