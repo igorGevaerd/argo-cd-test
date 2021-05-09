@@ -24,7 +24,7 @@ argo-cd:
         - localhost
       paths:
         - /argocd/(.*)
-      https: false
+      https: true
 configs:
   secret:
     # Argo expects the password in the secret to be bcrypt hashed. You can create this hash with
