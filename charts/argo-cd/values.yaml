@@ -26,9 +26,9 @@ argo-cd:
         - /argocd
       https: true
 configs:
-  secret:
-    # Argo expects the password in the secret to be bcrypt hashed. You can create this hash with
-    # `htpasswd -nbBC 10 "" $ARGO_PWD | tr -d ':\n' | sed 's/$2y/$2a/'`
-    argocdServerAdminPassword: $2a$10$OwYPUyuKj4w4l4PEkcoMOuiSazOu/POS4.BI.gS1eyP53k.8NhEFK
-    # Password modification time defaults to current time if not set
-    argocdServerAdminPasswordMtime: "2006-01-02T15:04:05Z"
+  # secret:
+  #   # Argo expects the password in the secret to be bcrypt hashed. You can create this hash with
+  #   # `htpasswd -nbBC 10 "" $ARGO_PWD | tr -d ':\n' | sed 's/$2y/$2a/'`
+  #   argocdServerAdminPassword: $2a$10$OwYPUyuKj4w4l4PEkcoMOuiSazOu/POS4.BI.gS1eyP53k.8NhEFK
+  #   # Password modification time defaults to current time if not set
+  #   argocdServerAdminPasswordMtime: "2006-01-02T15:04:05Z"
