@@ -18,13 +18,13 @@ argo-cd:
         - type: helm
           name: argo-cd
           url: https://argoproj.github.io/argo-helm
-    # ingress:
-    #   enabled: true
-    #   hosts:
-    #     - localhost
-    #   paths:
-    #     - /argocd
-    #   https: true
+    ingress:
+      enabled: true
+      # hosts:
+      #   - localhost
+      paths:
+        - /argocd
+      https: true
 configs:
   secret:
     # Argo expects the password in the secret to be bcrypt hashed. You can create this hash with
