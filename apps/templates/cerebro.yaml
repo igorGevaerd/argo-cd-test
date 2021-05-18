@@ -12,12 +12,21 @@ spec:
   project: default
   source:
     chart: cerebro
-    # helm:
-    #   values: |
-    #     nodeExporter:
-    #       hostRootfs: false
-    #     pushgateway:
-    #       enabled: true
+    helm:
+      values: |      
+        ingress:
+          enabled: false
+          annotations: {}
+          labels: {}
+          path: /cerebro
+        env:
+          AUTH_TYPE: "basic"
+          BASIC_AUTH_USER: "admin"
+          BASIC_AUTH_PWD: "wasfwasf"
+        config:
+          basePath: '/cerebro'
+          restHistorySize: 50
+          hosts: localhost
     repoURL: https://wiremind.github.io/wiremind-helm-charts
     targetRevision: 1.9.10
   syncPolicy:
