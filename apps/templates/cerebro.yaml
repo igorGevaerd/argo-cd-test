@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cerebro
+  namespace: tools
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: tools
+  project: default
+  source:
+    chart: cerebro
+    helm:
+      # values: |
+      #   nodeExporter:
+      #     hostRootfs: false
+      #   pushgateway:
+      #     enabled: true
+    repoURL: https://wiremind.github.io/wiremind-helm-charts
+    targetRevision: 1.9.10
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
