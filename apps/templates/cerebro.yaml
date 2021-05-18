@@ -12,12 +12,12 @@ spec:
   project: default
   source:
     chart: cerebro
-    helm:
-      # values: |
-      #   nodeExporter:
-      #     hostRootfs: false
-      #   pushgateway:
-      #     enabled: true
+    # helm:
+    #   values: |
+    #     nodeExporter:
+    #       hostRootfs: false
+    #     pushgateway:
+    #       enabled: true
     repoURL: https://wiremind.github.io/wiremind-helm-charts
     targetRevision: 1.9.10
   syncPolicy:
