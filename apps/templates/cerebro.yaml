@@ -14,19 +14,19 @@ spec:
     chart: cerebro
     helm:
       values: |      
-        ingress:
-          enabled: false
-          annotations: {}
-          labels: {}
-          path: /cerebro
+        # ingress:
+        #   enabled: false
+        #   annotations: {}
+        #   labels: {}
+        #   path: /cerebro
         env:
           AUTH_TYPE: "basic"
           BASIC_AUTH_USER: "admin"
           BASIC_AUTH_PWD: "wasfwasf"
-        config:
-          basePath: '/cerebro'
-          restHistorySize: 50
-          hosts: localhost
+        # config:
+        #   basePath: '/cerebro'
+        #   restHistorySize: 50
+        #   hosts: localhost
     repoURL: https://wiremind.github.io/wiremind-helm-charts
     targetRevision: 1.9.10
   syncPolicy:
