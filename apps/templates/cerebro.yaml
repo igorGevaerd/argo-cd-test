@@ -21,6 +21,8 @@ spec:
             # kubernetes.io/tls-acme: "true"
           labels: {}
           path: /cerebro
+          hosts:
+            - localhost
         env:
           AUTH_TYPE: "basic"
           BASIC_AUTH_USER: "admin"
