@@ -14,11 +14,13 @@ spec:
     chart: cerebro
     helm:
       values: |      
-        # ingress:
-        #   enabled: false
-        #   annotations: {}
-        #   labels: {}
-        #   path: /cerebro
+        ingress:
+          enabled: false
+          annotations: {}
+            kubernetes.io/ingress.class: nginx
+            # kubernetes.io/tls-acme: "true"
+          labels: {}
+          path: /cerebro
         env:
           AUTH_TYPE: "basic"
           BASIC_AUTH_USER: "admin"
