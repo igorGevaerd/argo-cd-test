@@ -29,7 +29,7 @@ spec:
           hosts: [localhost]
     repoURL: https://wiremind.github.io/wiremind-helm-charts
     targetRevision: 1.9.10
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+  # syncPolicy:
+  #   automated:
+  #     prune: true
+  #     selfHeal: true
