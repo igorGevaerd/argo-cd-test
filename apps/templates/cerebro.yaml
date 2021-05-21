@@ -27,11 +27,11 @@ spec:
           AUTH_TYPE: "basic"
           BASIC_AUTH_USER: "admin"
           BASIC_AUTH_PWD: "wasfwasf"
-        config:
-          basePath: '/cerebro'
-          restHistorySize: 50
-          hosts:
-          - host: 'localhost'
+        # config:
+        #   basePath: '/cerebro'
+        #   restHistorySize: 50
+        #   hosts:
+        #   - host: 'localhost'
             name: 'localhost'
     repoURL: https://wiremind.github.io/wiremind-helm-charts
     targetRevision: 1.9.10
