@@ -30,9 +30,9 @@ spec:
         config:
           basePath: '/cerebro'
           restHistorySize: 50
-          # hosts:
-          # - host:
-          #   name: localhost
+          hosts:
+          - host:
+            name: localhost
     repoURL: https://wiremind.github.io/wiremind-helm-charts
     targetRevision: 1.9.10
   # syncPolicy:
