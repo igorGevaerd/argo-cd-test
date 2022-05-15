@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: infra
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: tools
+  project: default
+  source:
+    path: infra/
+    repoURL: https://github.com/igorGevaerd/argo-cd-test.git
+    targetRevision: update-to-bootstrap-model
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
