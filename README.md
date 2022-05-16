@@ -1,39 +1,25 @@
 # argo-cd-test
 
 This is an exemple of the usage of argo cluster bootstrap to bring up several resources, using helm or kustomize.
-![image](https://user-images.githubusercontent.com/18078161/116833221-5eda4280-ab8e-11eb-97fa-ae3998be640c.png)
+![image](https://user-images.githubusercontent.com/18078161/168565447-f4e37554-571c-45c3-856a-6c8228a07769.png)
+![image](https://user-images.githubusercontent.com/18078161/168565526-3dd09d47-e924-41ae-971c-9d3e44154de6.png)
+
+
 
 From the cluster perspective:
-```
-$ kgp -A      
-NAMESPACE     NAME                                                     READY   STATUS    RESTARTS   AGE
-default       demo-mysql-8c4bc5464-bcwxk                               1/1     Running   0          2m53s
-default       demo-wordpress-65cc4b8947-ccb64                          1/1     Running   0          2m53s
-default       redis-6468bf6c84-85slz                                   2/2     Running   24         14d
-default       the-deployment-75b9678fbb-7bwq8                          1/1     Running   0          13m
-default       the-deployment-75b9678fbb-9qvx2                          1/1     Running   0          13m
-default       the-deployment-75b9678fbb-9vc28                          1/1     Running   0          13m
-kube-system   coredns-f9fd979d6-6jlqh                                  1/1     Running   11         11d
-kube-system   coredns-f9fd979d6-dk2v5                                  1/1     Running   11         11d
-kube-system   etcd-docker-desktop                                      1/1     Running   14         15d
-kube-system   kube-apiserver-docker-desktop                            1/1     Running   14         15d
-kube-system   kube-controller-manager-docker-desktop                   1/1     Running   14         15d
-kube-system   kube-proxy-z76qc                                         1/1     Running   14         15d
-kube-system   kube-scheduler-docker-desktop                            1/1     Running   15         15d
-kube-system   storage-provisioner                                      1/1     Running   19         15d
-kube-system   vpnkit-controller                                        1/1     Running   14         15d
-monitoring    grafana-57868dd8f-69lqh                                  1/1     Running   0          123m
-monitoring    loki-0                                                   1/1     Running   0          87m
-monitoring    prometheus-alertmanager-ccf8f68cd-qmf75                  2/2     Running   0          150m
-monitoring    prometheus-kube-state-metrics-685b975bb7-npcb5           1/1     Running   0          150m
-monitoring    prometheus-node-exporter-lgzs8                           1/1     Running   0          141m
-monitoring    prometheus-pushgateway-74cb65b858-4cvh2                  1/1     Running   0          150m
-monitoring    prometheus-server-d9fb67455-96p8z                        2/2     Running   0          150m
-monitoring    promtail-89j7x                                           1/1     Running   0          114m
-tools         argo-cd-argocd-application-controller-578fddb5b5-s2mv4   1/1     Running   0          9h
-tools         argo-cd-argocd-redis-5bf78f5b66-j87fx                    1/1     Running   0          9h
-tools         argo-cd-argocd-repo-server-59454f7d67-pmsc8              1/1     Running   0          9h
-tools         argo-cd-argocd-server-67598dbb97-zz2bx                   1/1     Running   0          9h
+```sh
+$ kubectl get pods -n tools 
+NAME                                                READY   STATUS    RESTARTS      AGE
+argocd-applicationset-controller-7754cb74bf-zx8nm   1/1     Running   1 (16m ago)   9h
+argocd-notifications-controller-6c9474bff-2hdbv     1/1     Running   1 (16m ago)   9h
+argocd-application-controller-0                     1/1     Running   1 (16m ago)   9h
+argocd-repo-server-6fbdc7845f-5trlw                 1/1     Running   1 (16m ago)   9h
+argocd-server-6fd6f6cdfb-8plml                      1/1     Running   1 (16m ago)   9h
+argocd-redis-7684949647-2stsv                       1/1     Running   1 (16m ago)   9h
+prometheus-node-exporter-g9ljd                      1/1     Running   0             2m44s
+prometheus-kube-state-metrics-6c44ff7fb6-5v64b      1/1     Running   0             2m44s
+prometheus-alertmanager-c9684865c-q76hd             2/2     Running   0             2m44s
+prometheus-server-7dbf77c965-z6blf                  2/2     Running   0             2m44s
 ```
 
 
