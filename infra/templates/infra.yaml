@@ -13,7 +13,7 @@ spec:
   source:
     path: infra/
     repoURL: https://github.com/igorGevaerd/argo-cd-test.git
-    targetRevision: update-to-bootstrap-model
+    targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true
