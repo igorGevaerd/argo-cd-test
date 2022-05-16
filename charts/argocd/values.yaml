@@ -6,26 +6,18 @@ argo-cd:
       - --insecure
       - --rootpath
       - /argocd
-    # config: # DEPRECATED!!!
-    #   repositories: |
-    #     - type: helm
-    #       name: stable
-    #       url: https://charts.helm.sh/stable
-    #     - type: helm
-    #       name: argo-cd
-    #       url: https://argoproj.github.io/argo-helm
     ingress:
       enabled: true
       # hosts:
       #   - localhost
       paths:
         - /argocd
-      https: true
+      # https: true
 configs:
   secret:
   #   # Argo expects the password in the secret to be bcrypt hashed. You can create this hash with
   #   # `htpasswd -nbBC 10 "" $ARGO_PWD | tr -d ':\n' | sed 's/$2y/$2a/'`
-    argocdServerAdminPassword: $2a$10$nkBDJ19A/b.mh802tAi7BuA1/sCkXBZbA6imc/vW8tyOCPoKn2eEy
+    argocdServerAdminPassword: $2a$10$PDotOyErFLwxvk/Uijoy6e4NLX1Z8C0gaTMgEYosq77s1BHELUvA6
   #   # Password modification time defaults to current time if not set
   #   argocdServerAdminPasswordMtime: "2006-01-02T15:04:05Z"
   repositories:

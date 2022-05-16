@@ -1,7 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root
+  name: argocd
+  namespace: tools
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
@@ -10,9 +11,9 @@ spec:
     namespace: tools
   project: default
   source:
-    path: apps/
+    path: charts/argocd
     repoURL: https://github.com/igorGevaerd/argo-cd-test.git
-    targetRevision: HEAD
+    targetRevision: update-to-bootstrap-model
   syncPolicy:
     automated:
       prune: true
