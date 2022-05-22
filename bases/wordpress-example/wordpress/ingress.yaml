@@ -2,12 +2,12 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: wordpressd
+  name: wordpress
 spec:
   rules:
     - http:
         paths:
-          - path: /wordpress
+          - path: /
             pathType: Prefix
             backend:
               service:
