@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/igorGevaerd/argo-cd-test.git
-    targetRevision: add-apps-base
+    targetRevision: wordpress-with-ingress
     path: bases/wordpress-example/
   destination:
     server: https://kubernetes.default.svc
