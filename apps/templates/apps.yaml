@@ -13,7 +13,7 @@ spec:
   source:
     path: apps/
     repoURL: https://github.com/igorGevaerd/argo-cd-test.git
-    targetRevision: wordpress-with-ingress
+    targetRevision: new-wp-host-ref
   syncPolicy:
     automated:
       prune: true

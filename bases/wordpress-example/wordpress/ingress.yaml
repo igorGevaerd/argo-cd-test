@@ -5,7 +5,8 @@ metadata:
   name: wordpress
 spec:
   rules:
-    - http:
+    - host: wordpress-test.arcotech.io
+      http:
         paths:
           - path: /
             pathType: Prefix
