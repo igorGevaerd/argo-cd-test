@@ -2,7 +2,7 @@ powerdns:
   powerdns: 
     postgres: 
       # database: "pdns"
-      host: "pdns-custom-postgresql"
+      host: "powerdns-postgresql"
       password: "ademir"
       # port: 
       username: "ademir"
