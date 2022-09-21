@@ -4,14 +4,14 @@ argo-cd:
   server:
     extraArgs:
       - --insecure
-      - --rootpath
-      - /argocd
+      # - --rootpath
+      # - /
     ingress:
       enabled: true
-      # hosts:
-      #   - localhost
+      hosts:
+        - argocd.local.env
       paths:
-        - /argocd
+        - /
       # https: true
 configs:
   secret:
