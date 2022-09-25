@@ -1,9 +1,0 @@
-dependencies:
-- name: powerdns
-  repository: https://halkeye.github.io/helm-charts
-  version: 0.4.0
-- name: postgresql
-  repository: https://charts.bitnami.com/bitnami
-  version: 11.9.1
-digest: sha256:556f2daf1d691e5d4b272ff5c706a550fe8db8345a1c684721d95e5a225c22ca
-generated: "2022-09-19T10:02:53.5235206-03:00"
