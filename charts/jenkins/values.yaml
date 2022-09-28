@@ -5,8 +5,8 @@ jenkins:
       apiVersion: networking.k8s.io/v1
       hostName: jenkins.192.168.0.247.nip.io
     installPlugins:
-    - kubernetes:1.29.4
-    - workflow-aggregator:2.6
-    - git:4.7.1
-    - configuration-as-code:1.51
-    - blueocean:1.24.6
+    - kubernetes:3706.vdfb_d599579f3
+    - workflow-aggregator:590.v6a_d052e5a_a_b_5
+    - git:4.12.1
+    - configuration-as-code:1512.vb_79d418d5fc8
+    - blueocean:1.25.8
