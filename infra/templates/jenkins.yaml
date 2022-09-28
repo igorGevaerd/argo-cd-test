@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jenkins
+  namespace: tools
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: tools
+  project: default
+  source:
+    path: charts/jenkins
+    repoURL: https://github.com/igorGevaerd/argo-cd-test.git
+    targetRevision: ig-main/feature/jenkins # changet to 'HEAD' after the merge
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
