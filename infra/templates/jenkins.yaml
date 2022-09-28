@@ -12,8 +12,11 @@ spec:
   project: default
   source:
     path: charts/jenkins
+    helm:
+      valueFiles: 
+      - values.yaml
     repoURL: https://github.com/igorGevaerd/argo-cd-test.git
-    targetRevision: ig-main/feature/jenkins # changet to 'HEAD' after the merge
+    targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true
